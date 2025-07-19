@@ -2,8 +2,7 @@ import re
 from typing import Callable
 
 def generator_numbers(text: str):
-    list_numbers = re.findall(r'\d+\.\d+', text)
-    for numbers in list_numbers:
+    for numbers in re.findall(r'\d+\.\d+', text):
         yield float(numbers)
 
 def sum_profit(text: str, func: Callable):
