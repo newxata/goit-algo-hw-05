@@ -2,10 +2,13 @@ import re
 from typing import Callable
 
 def generator_numbers(text: str):
+    # знаходження всіх дійсних чисел в тексті, запис їх як рядок у список
     for numbers in re.findall(r'\d+\.\d+', text):
+        # створення генератора та перетворення рядка на числа з крапкою
         yield float(numbers)
 
 def sum_profit(text: str, func: Callable):
+    # обчислення загальної суми чисел
     total_sum = sum(func(text))
     return total_sum
 
